@@ -1,0 +1,28 @@
+{
+  "name": "crypto-zombies",
+  "version": "1.0.0",
+  "description": "A solidity smart contract for the Ethereum based zombie game.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shishir99111/crypto-zombies.git"
+  },
+  "keywords": [
+    "ethereum",
+    "web3js",
+    "smartcontract",
+    "js"
+  ],
+  "author": "“Astha <“asthajadia12@gmail.com”> (linkedin.com/in/astha-jadia-841b23135)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shishir99111/crypto-zombies/issues"
+  },
+  "homepage": "https://github.com/shishir99111/crypto-zombies#readme",
+  "dependencies": {
+    "web3": "github:ethereum/web3.js"
+  }
+}
