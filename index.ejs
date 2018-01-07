@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <title>CryptoZombie Arena</title>
+
+    <link rel="stylesheets" type="text/css" href="./static/main.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>CryptoZombie Arena</h1>
+        <h2 id="instructor"></h2>
+
+        <label for="name" class="col-lg-2 control-label">Zombie Name</label>
+        <input id="name" type="text">
+
+        <button id="submit">Create Zombie</button>
+    </div>
+</body>
+
+</html>
+<script src="./static/web3.min.js"> </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+    // Shorthand for $( document ).ready()
+    $(function() {
+        // submit event handler for creation for the zombie with the given name
+        $('#submit').click(function() {
+            $('#name').val('');
+            zombieFactory.createRandomZombie($('#name').val());
+        });
+    });
+
+    const ABI = JSON.parse('<%-JSON.stringify(abi)-%>');
+
+    if (typeof web3 !== undefined) {
+        web3 = new Web3(web3.currentProvider);
+    } else {
+        web3 = new Web3(new Web3.prodivers.HttpProvider('<%- provider -%>'));
+    }
+
+    web3.eth.defaultAccount = web3.eth.accounts[0];
+
+    const zombieFactoryContract = web3.eth.contract(ABI);
+
+    const zombieFactory = zombieFactoryContract.at('<%-contractAddress-%>');
+
+    console.log(zombieFactory)
+</script>

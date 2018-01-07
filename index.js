@@ -1,18 +1,16 @@
 const express = require('express')
 const app = express();
 const http = require('http').Server(app);
-const PORT = process.env.PORT || 5550;
+const PORT = process.env.PORT || 5560;
 const path = require('path');
+const { abi, provider, contractAddress } = require('./env');
 
-process.env.NODE_ENV = 'production';
-
-app.use(express.static('./'));
+app.use(express.static('./public'));
 
 app.get(['/*'], (req, res) => {
-  //   res.sendFile(__dirname + '/index_prod.html');
+  res.render(__dirname + '/index.ejs', { abi, provider, contractAddress });
 });
 
 http.listen(PORT, () => {
   console.log('listening on PORT ' + PORT);
-  console.log('listening on ' + process.env.NODE_ENV + ' environment.');
 });
