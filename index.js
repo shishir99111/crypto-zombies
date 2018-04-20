@@ -11,6 +11,4 @@ app.get(['/*'], (req, res) => {
   res.render(__dirname + '/index.ejs', { abi, provider, contractAddress });
 });
 
-http.listen(PORT, () => {
-  console.log('listening on PORT ' + PORT);
-});
+http.listen(PORT, () => console.log('listening on PORT ' + PORT));
