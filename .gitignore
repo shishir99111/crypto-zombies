@@ -1,3 +1,4 @@
 node_modules/
 env.js
 .DS_Store
+.vscode
