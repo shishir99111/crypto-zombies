@@ -6,6 +6,8 @@ A solidity smart contract for the Ethereum based zombie game.
 - Public function in contract for the zombie creation and couples of private method defined.
 - Contract safe from overflow situations.
 - Zombies can attack, can be level up.
+- Higher the level, higher will be the fee.
+- Can be easily pluggable to any standard Crypto Platform as it the Contract works on the ERC721 Standards.
 
 TO DO:
 - Web3js integration to utilise the contract, implementation in JS. DONE
